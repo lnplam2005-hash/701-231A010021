@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần Lý Thuyết - Đề Số 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="main-menu">
+        <a href="index.html">Trang chủ</a>
+        <a href="lythuyet.html" class="active">a) Trả lời Lý thuyết</a>
+        <a href="https://lnplam2005-hash.github.io/baitap23-lt-/#den-keo-quan" target="_blank">b) Bài tập 23 </a>
+        <a href="bt22.html">c) Bài tập 22</a>
+        <a href="diemdanh.html">d) Thông tin Điểm danh</a>
+    </nav>
+
+    <div class="content-section" style="max-width: 900px; margin: 30px auto; text-align: left;">
+        <h1>Phần Lý Thuyết (40 điểm)</h1>
+        
+        <div class="theory-item">
+            <h3>1. Sự khác biệt giữa <code>position: absolute</code> và <code>position: relative</code> (10 điểm)</h3>
+            <p><strong>Khác biệt cốt lõi:</strong></p>
+            <ul>
+                <li><code>position: relative</code>: Phần tử vẫn giữ nguyên vị trí trong dòng chảy tài liệu (document flow), vị trí dịch chuyển tính tương đối so với chính nó khi dùng <code>top, left...</code>.</li>
+                <li><code>position: absolute</code>: Phần tử bị loại bỏ hoàn toàn khỏi luồng tài liệu thông thường, vị trí của nó được định vị tuyệt đối so với phần tử cha gần nhất có thiết lập vị trí (khác static, ví dụ <code>relative</code>).</li>
+            </ul>
+            <p><strong>Ví dụ ứng dụng Responsive:</strong> Dùng <code>relative</code> cho thẻ chứa (container) bao bọc, và dùng <code>absolute</code> để định vị nút "Đóng" (Close button) nằm ở góc trên bên phải của khung ảnh hoặc modal.</p>
+        </div>
+
+        <div class="theory-item">
+            <h3>2. Quy trình Domain, Hosting, DNS và Công cụ Deploy (10 điểm)</h3>
+            <p><strong>Quy trình:</strong> Đăng ký tên miền (Domain) tại nhà cung cấp, mua/thuê không gian lưu trữ (Hosting), cấu hình bản ghi **DNS** (A record, CNAME) trỏ tên miền về địa chỉ IP của hosting để người dùng truy cập.</p>
+            <p><strong>Công cụ deploy không cần server riêng:</strong> GitHub Pages và Netlify (giúp tự động hóa build website tĩnh qua Git).</p>
+            <p><strong>Rủi ro bảo mật:</strong> Nếu không cấu hình HTTPS (SSL) hoặc lộ thông tin API token, website dễ bị tấn công giả mạo (Man-in-the-middle) hoặc chiếm quyền quản trị repository.</p>
+        </div>
+
+        <div class="theory-item">
+            <h3>3. So sánh <code>let</code>, <code>const</code> và <code>var</code> (10 điểm)</h3>
+            <ul>
+                <li><code>var</code>: Function-scoped, có hỗ trợ hoisting (khởi tạo là <code>undefined</code>).</li>
+                <li><code>let</code> và <code>const</code>: Block-scoped, có cơ chế Temporal Dead Zone (không cho phép truy cập trước khi khai báo). <code>const</code> không cho phép gán lại giá trị mới.</li>
+            </ul>
+            <p><strong>Cách Debug:</strong> Dùng công cụ Chrome DevTools (Tab Sources, đặt Breakpoints hoặc dùng từ khóa <code>debugger;</code> trong code để kiểm tra phạm vi biến).</p>
+        </div>
+
+        <div class="theory-item">
+            <h3>4. Khái niệm Event Delegation (10 điểm)</h3>
+            <p><strong>Định nghĩa:</strong> Kỹ thuật tận dụng cơ chế nổi bọt sự kiện (Event Bubbling), gắn một bộ lắng nghe sự kiện duy nhất lên phần tử cha để quản lý sự kiện cho tất cả các phần tử con (kể cả phần tử được thêm động sau này).</p>
+            <p><strong>Lợi ích:</strong> Tiết kiệm bộ nhớ, tối ưu hiệu suất khi làm việc với danh sách động (dynamic list) vì không phải gán sự kiện thủ công cho từng item mới sinh ra.</p>
+        </div>
+    </div>
+
+</body>
+</html>
